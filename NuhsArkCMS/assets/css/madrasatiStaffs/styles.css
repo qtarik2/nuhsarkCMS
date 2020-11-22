@@ -5,7 +5,7 @@ main {
 }
 
 body {
-  background-color: rgb(230,225,225);
+   background-color: rgb(230,225,225);
    min-height: 400px;
    margin-bottom: 150px;
    clear: both;
@@ -26,19 +26,135 @@ body {
 	background-color: #FFF;
 	border-radius: 5px;
 	justify-content: start;	
-	margin-left: 200px;
-	width: 40%;
 	margin-bottom: 150px;
 }
 
-@media only screen and (max-width: 960px ) {
-	.container-fluid.studentDetails {
-		padding: 20px;
-		background-color: #FFF;
-		border-radius: 5px;
-		justify-content: start;	
-		margin-left: 0;
-		width: 100%;
-		margin-bottom: 150px;			
+.formMargin {
+	margin: 30px 0 20px 50px;
+}
+
+@media screen and (max-width: 600px) {
+	.formMargin {
+		margin: 30px 0 20px 20px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.pagination a {
+		font-size: 14px;
+		margin: 15px .5px;
+		padding: 5px 11px;
+		text-decoration: none;
+		background: transparent;
+		border-color: #ffae01;
+	}
+	.pagination a.active {
+	  background: -webkit-gradient(linear, left top, right top, from(#ff9d01), to(#ffae01));
+	  background: -webkit-linear-gradient(left, #ff9d01, #ffae01);
+	  background: -o-linear-gradient(left, #ff9d01, #ffae01);
+	  background: linear-gradient(to right, #ff9d01, #ffae01);
+	  border: 1px solid #ffae01;
+	  padding: 5px 13px;	
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.pagination a {
+		font-size: 16px;
+		margin: 15px 2px;
+		padding: 6px 13px;
+		text-decoration: none;
+		background: transparent;
+		border-color: #ffae01;
+	}
+	.pagination a.active {
+	  background: -webkit-gradient(linear, left top, right top, from(#ff9d01), to(#ffae01));
+	  background: -webkit-linear-gradient(left, #ff9d01, #ffae01);
+	  background: -o-linear-gradient(left, #ff9d01, #ffae01);
+	  background: linear-gradient(to right, #ff9d01, #ffae01);
+	  border: 1px solid #ffae01;
+	  padding: 6px 15px;	
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.pagination a {
+		font-size: 20px;
+		margin: 15px 4px;
+		padding: 8px 16px;
+		text-decoration: none;
+		background: transparent;
+		border-color: #ffae01;
+	}
+
+	.pagination a.active {
+	  background: -webkit-gradient(linear, left top, right top, from(#ff9d01), to(#ffae01));
+	  background: -webkit-linear-gradient(left, #ff9d01, #ffae01);
+	  background: -o-linear-gradient(left, #ff9d01, #ffae01);
+	  background: linear-gradient(to right, #ff9d01, #ffae01);
+	  border: 1px solid #ffae01;
+	  padding: 8px 18px;	
+	}
+}
+
+.pagination a:hover {
+  background: transparent;
+  border-color: #ffae01;
+}
+
+.btn-gradient-yellow {
+  background-color: #ffae01;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.btn-gradient-yellow:hover {
+  background: #042954;
+  color: white;
+}
+.btn-gradient-yellow:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+	.btn-gradient-yellow {
+	  background-color: #ffae01;
+	  overflow: hidden;
+	  position: relative;
+	  display: inline-block;
+	  height: 40px;
+	  width: 100%;
+	  border: none;
+	  border-radius: 4px;
+	  font-size: 18px;
+	  font-weight: 600;
+	  color: #ffffff;
+	  letter-spacing: 1px;
+	  padding: 10px;
+	  cursor: pointer;
+	  z-index: 9;
+	  -webkit-transition: all 0.3s ease-out;
+	  -moz-transition: all 0.3s ease-out;
+	  -ms-transition: all 0.3s ease-out;
+	  -o-transition: all 0.3s ease-out;
+	  transition: all 0.3s ease-out;
 	}
 }

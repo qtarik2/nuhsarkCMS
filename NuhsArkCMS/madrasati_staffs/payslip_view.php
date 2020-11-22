@@ -1,18 +1,12 @@
-﻿<?php
-// Auth 
-//include("auth.php");
-session_start();
-if(!isset($_SESSION["username"]))
-{
-	header("Location: login.php");
-	exit(); 
-}
+<?php
+// Session
+include("includes/session.inc.php");
 
 // FPDF Library
-require('../fpdf182/fpdf.php');
+require('../assets/fpdf182/fpdf.php');
 
 // DB Connect
-include("connect.php");
+include("includes/connect.inc.php");
  
 // Get Payslips data
 $ICNo=$_SESSION['username'];
@@ -36,7 +30,7 @@ while($Payslip = mysqli_fetch_assoc($result)) {
 
 	// Header
 	// Logo
-	$pdf->Image('../images/logo_madrasati.png',10,10, -400);
+	$pdf->Image('../assets/img/logo_madrasati.png',10,10, -400);
 
 	// Set font to Calibri, bold, 14pt
 	$pdf -> SetFont('Calibri', 'B', 9);
@@ -183,7 +177,6 @@ while($Payslip = mysqli_fetch_assoc($result)) {
 	$pdf -> Cell (59, 8, $Payslip['ReceivedBy'], 0, 0);
 	$pdf -> Cell (50, 8, 'Date:  ', 0, 0);
 	$pdf -> Cell (50, 8, $Payslip['Date'], 0, 1);	
-
 
 
 	$pdf -> output('I', 'Payslip.pdf');

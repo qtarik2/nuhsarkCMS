@@ -21,7 +21,7 @@ $sql = "SELECT * FROM staff WHERE Name LIKE '%$searchByName%'";
 $result = mysqli_query($con, $sql);
 
 // Define how many results per page
-$resultsPerPage = 10;
+$resultsPerPage = 15;
 $number_of_results = mysqli_num_rows($result);
 
 // Determine number of total page available
@@ -55,11 +55,11 @@ else {
 ?>
 
 <main>
-<div class="jumbotron">
+	<div class="jumbotron">
 	  <h1>STAFF DIRECTORY</h1>
-	  <div class="DashboardInfo">
-                <a id="home" href="index.php">Home</a><i class="fa fa-chevron-right"></i><a href="#">Staff Lists</a>
-			</div>
+		  <div class="DashboardInfo">
+				<a id="home" href="index.php">Home</a><i class="fa fa-chevron-right"></i><a href="#">Staff Lists</a>
+		  </div>
 	</div>
 	  
 	<div class="container-fluid tableData">

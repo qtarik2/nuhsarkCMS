@@ -1,19 +1,11 @@
-#nuhsArkLogo {
-  background-image: url("../../../assets/img/LAstly-New-2.png");
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 53px;
-  background-position: center;
-  background-size: 80%;
-}
-
 #madrasatiLogo {
-  background-image: url("../../../assets/img/madrasati-logo-90px-90px.png");
+  background-image: url("../../../assets/img/logo_madrasati.png");
   width: 90px;
   height: 90px;
   background-position: center;
-  background-size: 80%;
+  background-size: 100%;
   background-repeat: no-repeat;
+  margin-left: 50px;
 }
 
 .DashboardInfo a:link, a:visited {
@@ -25,4 +17,8 @@
 
 .DashboardInfo a:hover, a:active {
   color: orange;
+}
+
+.navbar.navbar-light.navbar-expand-md.bg-light {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
 }

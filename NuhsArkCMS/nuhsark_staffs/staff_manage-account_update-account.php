@@ -68,7 +68,7 @@ while($row = mysqli_fetch_assoc($result)) {
 					</div>
 				</div>
 			  <button type="submit" class="btn btn-gradient-yellow" name="update">Update</button>
-			  <?php
+			    <?php
 				if(isset($_GET["error"])) {
 					if($_GET["error"] == "emptyinput") {
 						echo "<p class='error'> Fill in all fields! </p>";
@@ -80,7 +80,7 @@ while($row = mysqli_fetch_assoc($result)) {
 						echo "<p class='error'> you have successfully updated! </p>";
 					}
 				}
-			?>	
+				?>	
 			</form>		
 <?php 
 }

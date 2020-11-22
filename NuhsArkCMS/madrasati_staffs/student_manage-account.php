@@ -4,20 +4,18 @@
 
 <?php
 // Connect to database
-require ('connect.php');
+require ('includes/connect.inc.php');
 
-
-
-if(isset($_POST['search'])){
-	$searchByStudentID = $_POST['searchByStudentID'];
-	$_SESSION['searchByStudentID'] = $searchByStudentID;
+if(!isset($_POST['search'])) {
+	$searchByValue = @$_SESSION['searchByValue'];
 } 
 else {
-	$searchByStudentID = @$_SESSION['searchByStudentID'];
-}	
+	$searchByValue = $_POST['searchByValue'];
+	$_SESSION['searchByValue'] = $searchByValue;
+}
 
 // Find out the number of results stored in database
-$sql = "SELECT * FROM madrasati_students WHERE studentID LIKE '%$searchByStudentID%'";
+$sql = "SELECT * FROM madrasati_students WHERE StudentID LIKE '%$searchByValue%' OR Name LIKE '%$searchByValue%'";
 
 // Find out the number of results stored in database
 $result = mysqli_query($con, $sql);
@@ -35,46 +33,41 @@ $pageActive = (isset($_GET["page"])) ? $_GET["page"] : 1;
 // Determine the sql LIMIT starting number for the results on the displaying page
 $thisPageFirstResult = ($resultsPerPage * $pageActive) - $resultsPerPage;
 
-$sql = "SELECT * FROM madrasati_students WHERE studentID LIKE '%$searchByStudentID%' LIMIT ". $thisPageFirstResult .',' . $resultsPerPage ;
+$sql = "SELECT * FROM madrasati_students WHERE StudentID LIKE '%$searchByValue%' OR Name LIKE '%$searchByValue%' LIMIT ". $thisPageFirstResult .',' . $resultsPerPage ;
 $searchResult = mysqli_query($con, $sql);
 
 // smart pagination style
 $maxPageNumber = 3;
 
-if($pageActive > $maxPageNumber)
-{
+if($pageActive > $maxPageNumber) {
 	$startNumber = $pageActive - $maxPageNumber;
 }
-else
-{
+else {
 	$startNumber = 1;
 }
 
-if($pageActive < ($numberOfPages - $maxPageNumber))
-{
+if($pageActive < ($numberOfPages - $maxPageNumber)) {
 	$endNumber = $pageActive + $maxPageNumber;
 }
-else
-{
+else {
 	$endNumber = $numberOfPages;
 }
 ?>
 
-
 <main>
 	<div class="jumbotron">
-	  <h1>All Students Data</h1>
+	  <h1>STUDENT LISTS</h1>
 	  <div class="DashboardInfo">
-                <a id="home" href="index.php">Home</a><i class="fa fa-chevron-right"></i><a href="#">All Student</a>
-			</div>
+		<a id="home" href="index.php">Home</a><i class="fa fa-chevron-right"></i><a href="#">Student Lists</a>
+	  </div>
 	</div>
 	  
 	<div class="container-fluid tableData">
 	  <div class="row">
 		<div class="col-12">			
 			<form class="form-inline" action="student_manage-account.php" method="POST">		
-			  <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Search by Student ID..." name="searchByStudentID" autofocus value="<?php $searchByStudentID; ?>">		
-			  <button type="submit" class="btn btn-dark mb-2" value="Search Data" name="search">Search</button>
+			  <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Search by ID, Name..." name="searchByValue" autofocus value="<?php $searchByValue; ?>">		
+			  <button type="submit" class="btn mb-2 btn-gradient-yellow" value="Search Data" name="search">Search</button>
 			  <div class="form-group">
 			  <!--<label for="sel1">Number of rows:</label>
 			  <select class="form-control" id="sel1">
@@ -91,11 +84,11 @@ else
 				<table class="table table-hover table-bordered">
 					<thead>
 					  <tr>
-						<th>#</th>
-						<th>Email Address</th>
+						<th>#</th>						
 						<th>Student ID</th>
 						<th>Name</th>
-						<th>MYKID</th>
+						<th>MyKID</th>
+						<th>Email Address</th>
 						<th>Date Of Birth</th>
 						<th>Age</th>
 						<th>Gender</th>
@@ -106,15 +99,15 @@ else
 					  </tr>
 					</thead>
 					<tbody>
-				<?php $count = 0; ?>
+				<?php $count = 0 + $thisPageFirstResult; ?>
 				<?php while($row = mysqli_fetch_assoc($searchResult)) { 
 						$count++;?>
 					  <tr>
 						<td><?php echo $count; ?></td>
-						<td><?php echo $row["EmailAddress"]; ?></td>
 						<td><?php echo $row["StudentID"]; ?></td>
 						<td><?php echo $row["Name"]; ?></td>
 						<td><?php echo $row["MYKID"]; ?></td>
+						<td><?php echo $row["EmailAddress"]; ?></td>
 						<td><?php echo $row["DOB"]; ?></td>
 						<td><?php echo $row["Age"]; ?></td>
 						<td><?php echo $row["Gender"]; ?></td>
@@ -126,45 +119,45 @@ else
 				<?php  } ?>
 					</tbody>
 				</table>
-			</div>
-			
+			</div>			
 			<nav>
 				<ul class="pagination">
 					<?php
+					$currentPage = $pageActive;
 					$firstPage = 1;
-					$nextPage = $pageActive + 1;
-					$previousPage = $pageActive - 1;
+					$nextPage = $currentPage + 1;
+					$previousPage = $currentPage - 1;
 					
 					?>
 					
 					<?php
 					// First Button
-					if($pageActive == 1)
+					if($currentPage == 1)
 					{
 					?>								
-						<li class="page-item disabled"><a class="page-link" href="student_manage-account.php?page=<?php echo $firstPage ?>" aria-label="Previous"><span aria-hidden="true">First</span></a></li>
+						<li class="page-item disabled"><a class="page-link" href="?page=<?php echo $firstPage ?>" aria-label="Previous"><span aria-hidden="true">First</span></a></li>
 					<?php
 					}
 					else
 					{
 					?>
-						<li class="page-item"><a class="page-link" href="student_manage-account.php?page=<?php echo $firstPage ?>" aria-label="Previous"><span aria-hidden="true">First</span></a></li>
+						<li class="page-item"><a class="page-link" href="?page=<?php echo $firstPage ?>" aria-label="Previous"><span aria-hidden="true">First</span></a></li>
 					<?php
 					}
 					?>
 					
 					<?php
 					// Previous Button
-					if($pageActive == 1)
+					if($currentPage == 1)
 					{
 					?>								
-						<li class="page-item disabled"><a class="page-link" href="student_manage-account.php?page=<?php echo $previousPage ?>" aria-label="Previous"><span aria-hidden="true">Previous</span></a></li>
+						<li class="page-item disabled"><a class="page-link" href="?page=<?php echo $previousPage ?>" aria-label="Previous"><span aria-hidden="true">Previous</span></a></li>
 					<?php
 					}
 					else
 					{
 					?>
-						<li class="page-item"><a class="page-link" href="student_manage-account.php?page=<?php echo $previousPage ?>" aria-label="Previous"><span aria-hidden="true">Previous</span></a></li>
+						<li class="page-item"><a class="page-link" href="?page=<?php echo $previousPage ?>" aria-label="Previous"><span aria-hidden="true">Previous</span></a></li>
 					<?php
 					}
 					?>									
@@ -172,53 +165,53 @@ else
 					<?php
 					// Pages with number
 					for ($i = $startNumber; $i <= $endNumber; $i++) {
-						if($i == $pageActive)
+						if($i == $currentPage)
 						{
 					?>
 						
-							<li class="page-item active"><a class="page-link" href="student_manage-account.php?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+							<li class="page-item"><a class="page-link active" href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
 						<?php
 						}
 						else
 						{
 						?>
-							<li class="page-item"><a class="page-link" href="student_manage-account.php?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+							<li class="page-item"><a class="page-link" href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
 					<?php
 						}
 					}
 					
 					// Next Button
-					if($pageActive == $numberOfPages)
+					if($currentPage >= $numberOfPages)
 					{
 					?>
-						<li class="page-item disabled"><a class="page-link" href="student_manage-account.php?page=<?php echo $nextPage ?>" aria-label="Next"><span aria-hidden="true">Next</span></a></li>
+						<li class="page-item disabled"><a class="page-link" href="?page=<?php echo $nextPage ?>" aria-label="Next"><span aria-hidden="true">Next</span></a></li>
 					<?php
 					}
 					else
 					{
 					?>
-						<li class="page-item"><a class="page-link" href="student_manage-account.php?page=<?php echo $nextPage ?>" aria-label="Next"><span aria-hidden="true">Next</span></a></li>
+						<li class="page-item"><a class="page-link" href="?page=<?php echo $nextPage ?>" aria-label="Next"><span aria-hidden="true">Next</span></a></li>
 					<?php
 					}								
 					?>
 
 					<?php
 					// Last Button
-					if($pageActive == $numberOfPages)
+					if($currentPage >= $numberOfPages)
 					{
 					?>								
-						<li class="page-item disabled"><a class="page-link" href="student_manage-account.php?page=<?php echo $numberOfPages ?>" aria-label="Previous"><span aria-hidden="true">Last</span></a></li>
+						<li class="page-item disabled"><a class="page-link" href="?page=<?php echo $numberOfPages ?>" aria-label="Previous"><span aria-hidden="true">Last</span></a></li>
 					<?php
 					}
 					else
 					{
 					?>
-						<li class="page-item"><a class="page-link" href="student_manage-account.php?page=<?php echo $numberOfPages ?>" aria-label="Previous"><span aria-hidden="true">Last</span></a></li>
+						<li class="page-item"><a class="page-link" href="?page=<?php echo $numberOfPages ?>" aria-label="Previous"><span aria-hidden="true">Last</span></a></li>
 					<?php
 					}
 					?>					
 				</ul>
-			</nav>
+			</nav>			
 		</div>   
 	  </div>
 	</div>

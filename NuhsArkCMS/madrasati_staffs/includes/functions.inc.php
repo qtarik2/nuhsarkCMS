@@ -171,7 +171,7 @@ function updateStaff($con, $name, $password, $icno) {
 	$sql = "UPDATE madrasati_staff SET Name= ?, Password= ? WHERE ICNo = ?;";
 	$stmt = mysqli_stmt_init($con);
 	if(!mysqli_stmt_prepare($stmt, $sql)) {
-		header("location: ../&error=stmtfailed");
+		header("location: ../staff_manage-account_update-account.php?error=stmtfailed");
 		exit();
 	}
 	
@@ -180,7 +180,7 @@ function updateStaff($con, $name, $password, $icno) {
 	mysqli_stmt_bind_param($stmt, "sss", $name, $hashedPassword, $icno);
 	mysqli_stmt_execute($stmt);
 	mysqli_stmt_close($stmt);
-	header("location: ../&error=none");
+	header("location: ../staff_manage-account_update-account.php?error=none");
 	exit();
 }
 

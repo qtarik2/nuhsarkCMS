@@ -24,8 +24,7 @@ include "includes/session.inc.php";
 <body>
     <nav class="navbar navbar-light navbar-expand-md bg-white" style="margin: 1px;">
         <div class="container-fluid"><a class="navbar-brand" id="madrasatiLogo" href="index.php"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgba(0,0,0,1); font-weight: bold;"><?php echo $_SESSION["name"]; ?></a>
@@ -33,10 +32,10 @@ include "includes/session.inc.php";
                     </li>
                     <li class="nav-item" role="presentation"><a href="includes/logout.inc.php" class="btn btn-dark text-white"><i class="fas fa-power-off"></i> Logout</a></li>
                 </ul>
-        </div>
+			</div>
         </div>
     </nav>
-    <nav class="navbar navbar-light navbar-expand-md bg-light" style="background-color: rgba(248,249,250,0);">
+    <nav class="navbar link navbar-light navbar-expand-md bg-light" style="background-color: rgba(248,249,250,0);">
         <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="nav navbar-nav">

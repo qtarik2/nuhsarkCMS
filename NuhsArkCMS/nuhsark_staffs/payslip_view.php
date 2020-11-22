@@ -3,7 +3,7 @@
 include("includes/session.inc.php");
 
 // FPDF Library
-require('../fpdf182/fpdf.php');
+require('../assets/fpdf182/fpdf.php');
 
 // DB Connect
 include("includes/connect.inc.php");
@@ -30,7 +30,7 @@ while($Payslip = mysqli_fetch_assoc($result)) {
 
 	// Header
 	// Logo
-	$pdf->Image('../images/nuhsarklogo3.png',10,10, -200);
+	$pdf->Image('../assets/img/nuhsarklogo3.png',10,10, -200);
 
 	// Set font to Calibri, bold, 14pt
 	$pdf -> SetFont('Calibri', 'B', 9);
