@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 40px;
+  width: 700px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+}
+
+div.content {
+  margin-left: 700px;
+  padding: 0 60px;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  align-items:center;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    margin-top: 40px;
+    margin-left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}

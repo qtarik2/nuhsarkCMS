@@ -1,0 +1,52 @@
+main {
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body {
+  background-color: rgb(230,225,225);
+   min-height: 400px;
+   margin-bottom: 150px;
+   clear: both;
+}
+
+.form-inline {
+	margin-bottom: 10px;
+}
+
+.container-fluid.tableData {
+	padding: 20px;
+	background-color: #FFF;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+
+.col-2.tableData {
+	padding: 20px;
+	background-color: #FFF;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+
+.container-fluid.studentDetails {
+	padding: 20px;
+	background-color: #FFF;
+	border-radius: 5px;
+	justify-content: start;	
+	margin-left: 200px;
+	width: 40%;
+	margin-bottom: 150px;
+}
+
+@media only screen and (max-width: 960px ) {
+	.container-fluid.studentDetails {
+		padding: 20px;
+		background-color: #FFF;
+		border-radius: 5px;
+		justify-content: start;	
+		margin-left: 0;
+		width: 100%;
+		margin-bottom: 150px;			
+	}
+}

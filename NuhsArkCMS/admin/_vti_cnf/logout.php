@@ -1,0 +1,14 @@
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|26 Dec 2019 01:04:32 -0000
+vti_extenderversion:SR|12.0.0.6500
+vti_backlinkinfo:VX|admin/madrasati/account-transaction_incomes_add-transaction.php admin/index.php admin/devops/nuhsark_report_term-fees-report_result_[OriginalIndividualUpdate].php admin/nuhsark/account-transaction_annual_summary.php admin/nuhsark/account-transaction_annual_summary_update.php admin/devops/nuhsark_account-transaction_summary.php admin/madrasati/account-transaction_incomes_update.php admin/madrasati/report_account-statement-reportv2.php admin/user-management_change-password-result.php admin/devops/nuhsark_report_term-fees-report_result_copy(1).php admin/devops/nuhsark_report_annual-fees-report_result_[Original].php admin/nuhsark/account-transaction_summary_[IndividualUpdate].php admin/madrasati/payment_select-student.php admin/madrasati/payment_select-student_payment_result.php admin/devops/nuhsark_account-transaction_update-transaction.php admin/dashboard_settings.php admin/dashboard.php admin/nuhsark/account-transaction_incomes.php admin/madrasati/account-transaction_summary_[IndividualUpdate].php admin/devops/nuhsark_report_account-statement-report_result_[Original].php admin/madrasati/account-transaction_annual_summary.php admin/madrasati/report_account-statement-reportv2_result.php admin/devops/nuhsark_report_annual-fees-report_result_[IndividualTermUpdate].php admin/devops/nuhsark_payment_summary_[OriginalViewOnly].php admin/user-management_change-password.php admin/madrasati/dashboard.php admin/madrasati/account-transaction_incomes.php admin/nuhsark/account-transaction_summary_update.php admin/devops/nuhsark_account-transaction_summary_copy(1).php admin/madrasati/account-transaction_annual_summary_update.php admin/nuhsark/dashboard.php admin/madrasati/account-transaction_summary_update.php admin/devops/nuhsark_report_term-fees-report_result_dev.php admin/madrasati/account-transaction_summary.php admin/madrasati/report_term-fees-report_result.php admin/nuhsark/account-transaction_summary.php admin/devops/nuhsark_payment_summary_[AllMultipleUpdate].php admin/madrasati/account-transaction_incomes_delete-transaction.php admin/madrasati/payment_select-student_payment.php admin/devops/nuhsark_payment_summary_[ViewUpdateIndividual].php admin/user-management_profile.php admin/madrasati/report_account-statement-report_result.php admin/madrasati/account-transaction_incomes_add-transaction_result.php admin/nuhsark/account-transaction_incomes_update.php
+vti_author:SR|LAPTOP-3VENH845\\Administrator
+vti_modifiedby:SR|LAPTOP-3VENH845\\Administrator
+vti_timecreated:TR|26 Dec 2019 01:04:32 -0000
+vti_cacheddtm:TX|26 Dec 2019 01:04:32 -0000
+vti_filesize:IR|160
+vti_cachedneedsrewrite:BR|false
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_charset:SR|utf-8

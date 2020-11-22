@@ -1,0 +1,32 @@
+#nuhsArkLogo {
+  background-image: url("../../../assets/img/LAstly-New-2.png");
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 53px;
+  background-position: center;
+  background-size: 80%;
+}
+
+#madrasatiLogo {
+  background-image: url("../../../assets/img/madrasati-logo-90px-90px.png");
+  width: 90px;
+  height: 90px;
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+.DashboardInfo a:link, a:visited {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.DashboardInfo a:hover, a:active {
+  color: orange;
+}
+
+.navbar.navbar-light.navbar-expand-md.bg-light {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+}
