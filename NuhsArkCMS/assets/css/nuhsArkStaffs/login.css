@@ -11,8 +11,8 @@ body {
   height: 100%;
   overflow: auto;
   display: flex;
-  justify-content: center;
-  background-color: #000
+  justify-content: left;
+  background-color: #000;
 
 }
 
