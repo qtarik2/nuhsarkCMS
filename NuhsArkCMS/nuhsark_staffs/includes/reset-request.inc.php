@@ -100,13 +100,13 @@ if (isset($_POST["submit"])) {
 	$mail->SMTPAuth = true;
 
 	//Username to use for SMTP authentication - use full email address for gmail
-	$mail->Username = "fortestpurposeinlocalhost@gmail.com";
+	$mail->Username = "youremail@gmail.com";
 
 	//Password to use for SMTP authentication
-	$mail->Password = "forTestpurpose";
+	$mail->Password = "yourpass";
 
 	//Set who the message is to be sent from
-	$mail->setFrom('nuhsark@nuhsark.com'); 
+	$mail->setFrom('nuhsark@gmail.com'); 
 
 	// Set an alternative reply-to address
 	$mail->addReplyTo('no-reply@nuhsark.com');
@@ -130,8 +130,8 @@ if (isset($_POST["submit"])) {
 		
 		// mail($to, $subject, $message, $header);
 	$mail->Subject = "Reset your password for Nuhsark";
-	// $mail->Body = '<p>We received a password reset request. The link to reset your password is below, if you do not make this request, you can ignore this email</p>';
-	// $mail->Body = '<p>Here is your password reset link: </br>';
+	$mail->Body = '<p>We received a password reset request. The link to reset your password is below, if you do not make this request, you can ignore this email</p>';
+	$mail->Body = '<p>Here is your password reset link: </br>';
 	$mail->Body = '<a href="' . $url . '">' . $url . '</a></p>';
 
 	//send the message, check for errors
