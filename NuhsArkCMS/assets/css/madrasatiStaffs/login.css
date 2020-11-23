@@ -11,7 +11,7 @@ body {
   height: 100%;
   overflow: auto;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   background-color: #000000;
 }
 

@@ -40,6 +40,8 @@
 				}
 			?>
 		</form>	
+		<!-- Here we create the form which starts the password recovery process! -->
+		<a href="reset-password.php">Forget your password?</a>
 	</div>
 </body>
 </html>

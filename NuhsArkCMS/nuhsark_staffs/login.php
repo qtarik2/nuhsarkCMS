@@ -29,7 +29,11 @@
 			<input type="password" name="password" class="form-control" placeholder="Enter Password...">
 		</div>
 			<button type="submit" name="submit" class="btn btn-dark">LOGIN</button>
-
+		<div class="form-group">
+			<br>
+			<!-- Here we create the form which starts the password recovery process! -->
+			<a href="reset-password.php">Forget your password?</a>
+		</div>
 		<?php
 		if(isset($_GET["error"])) {
 			if($_GET["error"] == "emptyinput") {
@@ -40,7 +44,8 @@
 			}
 		}
 		?>
-	</form>	
+	</form>
+	
 </div>
 </body>
 </html>
